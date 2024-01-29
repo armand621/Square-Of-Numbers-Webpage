@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generate Squares</title>
+</head>
+ 
+<body>
+ 
+ 
+ 
+ 
+<div class="user-input formatDiv text-center"> 
+  <label for="num">Generate number of squares: </label>
+  <input type="number" name="num" class="num text-center" >
+  <button class="btn">Submit</button>
+ 
+</div>
+ 
+</div>
+ 
+<div class="parent-div text-center formatDiv">
+ 
+ 
+ 
+ 
+</div>
+ 
+ 
+<style type="text/css">
+ 
+:root{
+  --pink: #7c9564;
+  --white: #f1f1f1;
+  --orange: #de8c5e;
+  --black: #373737;
+  --Helvetica: impact, sans-serif;
+ 
+ 
+}
+ 
+body{
+  background: var(--white);
+ 
+}
+ 
+h1{
+ 
+  background-color: var(--orange);
+  color: var(--white);
+  padding: 20px 0;
+  text-align: center;
+  font-family: "Bookman Old Style", serif;
+ 
+ 
+}
+ 
+ 
+.text-center{
+  text-align: center;
+ 
+}
+ 
+ 
+.formatDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  width: 100%;
+ 
+}
+ 
+ 
+ 
+.formatChild{
+  background: var(--pink);
+  color: var(--white);
+  padding: 50px 0;
+  margin-top: 10px;
+  width: 80%;
+  align-self: center;
+  border-radius: 5px;
+ 
+ 
+ 
+}
+ 
+.parent-div{
+  margin: 20px 0 0 0;
+ 
+ 
+}
+ 
+.parent-div > div{
+  width: 70%;
+  height: 300px;
+  /*border: 2px solid var(--black);*/
+  box-shadow: 0px 0px 15px #9a9a9a;
+  align-self: center;
+  margin-top: 50px;
+  border-radius: 5px;
+  
+ 
+}
+ 
+ 
+.parent-div > div > h2{
+  background: var(--black);
+  color: white;
+  margin: 0;
+  padding: 20px 0;
+ 
+ 
+}
+ 
+ 
+.parent-div>div>p{
+ 
+  font-size: 60px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 800;
+  margin-top: 80px;
+ 
+}
+ 
+.user-input label{
+  margin: 20px 0 0 0;
+  font-size: 20px;
+  font-weight: 600;
+ 
+ 
+}
+ 
+ 
+.num{
+  margin: 20px 0 0 0;
+  width:60%;
+  height:60px;
+  border-radius: 5px;
+  border: 1px solid var(--black);
+  align-self: center;
+  font-size: 25px;
+  font-weight: 600;
+}
+ 
+.btn{
+  margin: 20px 0 0 0;
+  width: 40%;
+  height: 45px;
+  align-self: center;
+  border-radius: 5px;
+  border: none;
+  background: var(--black);
+  color: var(--white);
+  outline: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+ 
+ 
+</style>
+ 
+<script type="text/javascript">
+ 
+const parentDiv = document.querySelector('.parent-div')
+const btn = document.querySelector('.btn')
+let numVal = document.querySelector('.num')
+ 
+ 
+const addChildElements = () => {
+  while(parentDiv.firstChild){
+    parentDiv.removeChild(parentDiv.firstChild)
+  
+  
+  }
+ 
+ 
+ 
+ 
+  for(let i = 1; i <=numVal.value; i++){
+    parentDiv.innerHTML += `
+    
+      <div>
+        <h2>Square of ${i}</h2>
+        <p>${(i * i).toLocaleString()}</p>
+      
+      </div>
+    
+    
+    
+    
+    `
+  
+  }
+ 
+ 
+}
+ 
+ 
+btn.addEventListener('click', addChildElements)
+ 
+ 
+</script>
+ 
+</body>
+</html>
